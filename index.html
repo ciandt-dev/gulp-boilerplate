@@ -1,3 +1,26 @@
+<!--
+The MIT License
+
+Copyright 2015 CI&T.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
@@ -6,29 +29,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/normalize.css" media="screen">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="assets/stylesheets/github-light.css" media="screen">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   </head>
-  <body ng-app="obm">
-    <section class="page-header">
-      <h1 class="project-name">Gulp Boilerplate</h1>
-      <h2 class="project-tagline">A simple way to start your project using Gulp.</h2>
-      <a href="https://github.com/ciandt-dev/gulp-boilerplate" class="btn">View on GitHub</a>
-      <a href="https://github.com/ciandt-dev/gulp-boilerplate/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/ciandt-dev/gulp-boilerplate/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
-
-    <section class="main-content">
+  <body ng-app="ciant-gulp-boilerplate">
+    <div ng-include src="'app/parts/_header.html'"></div>
+    <div ng-include src="'app/parts/_sidebar.html'"></div>
+    <div ng-include src="'app/parts/_context.html'"></div>
+    <section class="main-content fulled-area">
       <div ng-view></div>
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/ciandt-dev/gulp-boilerplate">Gulp Boilerplate</a> is maintained by <a href="https://github.com/ciandt-dev">ciandt-dev</a>.</span>
-      </footer>
     </section>
-
+    <div ng-include src="'app/parts/_footer.html'"></div>
     <script src="assets/javascript/jquery.min.js"></script>
     <script src="assets/javascript/angular.min.js"></script>
     <script src="assets/javascript/angular-route.min.js"></script>
     <script src="assets/javascript/angular-sanitize.min.js"></script>
     <script src="app/app.js"></script>
-    <script src="app/controllers/api.js"></script>
+    <script src="app/controllers/main.js"></script>
   </body>
 </html>

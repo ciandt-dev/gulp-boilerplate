@@ -29,23 +29,32 @@ var ex = {
 };
 
 var url = {
-  a: '/'
+  a: '/',
+  b: '/getting-started',
+  c: '/contributing'
 };
 
 var path = {
   views: 'app/parts/'
 };
 
-angular.module('obm', [
+var cgb = angular.module('ciant-gulp-boilerplate', [
   'ngRoute',
   'ngSanitize'
-]).config(function ($routeProvider, $locationProvider) {
+]);
+
+cgb.config(function ($routeProvider, $locationProvider) {
   $routeProvider
           .when('/', {
             templateUrl: path.views + 'home' + ex.h
           })
+          .when(url.b, {
+            templateUrl: path.views + url.b + ex.h
+          })
+          .when(url.c, {
+            templateUrl: path.views + url.c + ex.h
+          })
           .otherwise({
-            templateUrl: path.views + 'dashboard/404' + ex.h
+            templateUrl: path.views + '404' + ex.h
           });
-  //$locationProvider.html5Mode(true);
 });
