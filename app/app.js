@@ -35,7 +35,7 @@ var url = {
 };
 
 var path = {
-  views: 'app/parts/'
+  views: 'app/contents/'
 };
 
 var cgb = angular.module('ciant-gulp-boilerplate', [
