@@ -11,27 +11,38 @@ function getTask(task) {
   return require('./gulp-tasks/' + task)(gulp, plugins, config);
 }
 
-gulp.task('sass:production', getTask('sass-production'));
-gulp.task('sass:dev', getTask('sass-dev'));
-gulp.task('sass:watch', getTask('sass-watch'));
-gulp.task('js:compress', getTask('js-compress'));
-gulp.task('js:watch', getTask('js-watch'));
-gulp.task('js:eslint', getTask('js-eslint'));
-gulp.task('js:jshint', getTask('js-jshint'));
-gulp.task('js:jscs', getTask('js-jscs'));
-gulp.task('sprite', getTask('sprite'));
-gulp.task('server', ['default'], getTask('server'));
-gulp.task('stylelint', getTask('stylelint'));
-gulp.task('imagemin', getTask('imagemin'));
+
+// if you need you can only "remove" the tasks above 
+// commenting the line. There will be no lost for the project
+gulp.task('sass:production', getTask('sass-production')); // create a CSS for Production (Minified)
+gulp.task('sass:dev', getTask('sass-dev'));   //create a CSS for Development
+gulp.task('sass:watch', getTask('sass-watch'));  //a Plugin to Lesson the SCSS changes
+gulp.task('js:compress', getTask('js-compress'));  // Compress the Javascript File
+gulp.task('js:watch', getTask('js-watch'));     // Watch Javascript Change Files
+gulp.task('js:eslint', getTask('js-eslint'));   // validate Javascript and ES6
+gulp.task('js:jshint', getTask('js-jshint'));  // validate Javascript and ES6
+gulp.task('js:jscs', getTask('js-jscs'));  // validade Javascript 
+gulp.task('sprite', getTask('sprite'));  // create Sprite using SpriteSmith
+gulp.task('server', ['default'], getTask('server')); //used for Browser Sync and LiveReload
+gulp.task('stylelint', getTask('stylelint')); // lint to check the CSS File. Using postcss
+gulp.task('imagemin', getTask('imagemin')); // Minify the Image
 gulp.task('imagemin-watch', getTask('imagemin-watch'));
 
 // Compile JS
+// Please select which JS validate Plugin(s) is better for your Project
+// And comment the other not used
 gulp.task('compileJS', function(cbFunc) {
-  runSequence(['js:eslint', 'js:jshint', 'js:jscs'],
-              'js:compress',
+  runSequence([
+               'js:eslint'
+               'js:jshint'
+               ,'js:jscs'
+               ],
+               'js:compress',
               cbFunc);
 });
 
+// this gulp default is an example/option
+// You can change it, adding ou removing tasks
 gulp.task('default', [// Compile
                       'sass:dev',
                       'sprite',
