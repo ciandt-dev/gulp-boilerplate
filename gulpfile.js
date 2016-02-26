@@ -34,7 +34,7 @@ gulp.task('imagemin-watch', getTask('imagemin-watch'));
 gulp.task('compileJS', function(cbFunc) {
   runSequence([
                'js:eslint'
-               'js:jshint'
+               ,'js:jshint'
                ,'js:jscs'
                ],
                'js:compress',

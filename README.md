@@ -15,6 +15,11 @@ Clone the git repo and run NPM
 ``` bash
 git clone https://github.com/ciandt-dev/gulp-boilerplate.git
 cd gulp-boilerplate
+```
+
+To check if you have the correct version of Node and NPM, required by this project, please run:
+
+```bash
 npm test
 ```
 
