@@ -7,8 +7,9 @@
     "type": "git",
     "url": "https://github.com/ciandt-dev/gulp-boilerplate.git"
   },
-  "engines" : { 
-    "node" : "v4.x"
+  "engines": {
+    "node": "v4.2.2",
+    "npm": "3.5.2"
   },
   "bugs": {
     "url": "https://github.com/ciandt-dev/gulp-boilerplate/issues"
@@ -16,10 +17,10 @@
   "homepage": "https://github.com/ciandt-dev/gulp-boilerplate",
   "license": "MIT",
   "scripts": {
+    "test": "node ./test/check_version.js",
     "sass:dev": "./node_modules/.bin/gulp",
     "sass:prod": "./node_modules/.bin/gulp sass:prod"
   },
-  "dependencies": {},
   "devDependencies": {
     "breakpoint-sass": "^2.6.1",
     "browser-sync": "^2.9.10",

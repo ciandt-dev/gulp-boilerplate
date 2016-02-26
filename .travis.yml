@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - "v4.2"
+before_install:
+  - npm i -g npm@3.5.2
 before_script:
+  - npm test
   - npm install -g gulp
 script: gulp sass:dev

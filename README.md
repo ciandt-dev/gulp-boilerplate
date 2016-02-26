@@ -15,8 +15,15 @@ Clone the git repo and run NPM
 ``` bash
 git clone https://github.com/ciandt-dev/gulp-boilerplate.git
 cd gulp-boilerplate
+npm test
+```
+
+If Test get succeed then run npm install, otherwise you can get some error logs on installation process.
+
+``` bash
 npm install
 ```
+
 
 ## Run
 ``` bash
