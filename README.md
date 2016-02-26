@@ -65,6 +65,9 @@ We have some advice if you want to contribute with us. If you are in doubt about
 ## Stay up-to-date :bulb:
 [Check GitHub documentation.](https://github.com/ciandt-dev/gulp-boilerplate/blob/master/CONTRIBUTING.md#updating-your-fork)
 
+## Updates for Omega 4
+This project was developed to be used by any project. If you want to change the folder structure for Omega 4, all you need is to update the file gulp-tasks/config.js.
+
 ## License
 
 The code is available under the [MIT License](LICENSE.md).
