@@ -9,7 +9,6 @@ module.exports = {
   },
   paths: {
     scripts: {
-      fileName: 'main.js',
       src: './src/js/',
       dest: './dist/js/'
     },
@@ -31,5 +30,15 @@ module.exports = {
     imgName: 'sprite.png',
     retinaImgName: 'sprite-2x.png',
     cssName: '_sprite.scss',
+  },
+  filesDist: {
+    css: {
+      unminfied : 'gulp-boilerplate.css',
+      minified : 'gulp-boilerplate.min.css'
+    },
+    js: {
+      unminfied : 'gulp-boilerplate.js',
+      minified : 'gulp-boilerplate.min.js'
+    }
   }
 };

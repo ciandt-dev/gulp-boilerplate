@@ -1,7 +1,10 @@
 'use strict';
 
 var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
+var plugins = require('gulp-load-plugins')({
+  DEBUG: false, // change to true to see the funcion name of plugins
+  pattern: ['gulp-*', 'gulp.*','*']
+});
 var config = require('./gulp-tasks/_config.js');
 var runSequence = require('run-sequence');
 

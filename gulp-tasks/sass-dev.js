@@ -1,17 +1,18 @@
 'use strict';
+//nested, expanded, compact, compressed
+var sassOptions = {
+  outputStyle: 'expanded',
+  includePaths: [
+     __dirname + '\\..\\' + 'breakpoint-sass/stylesheets/'
+  ]
+};
 
 module.exports = function (gulp, $, config) {
   return function() {
     gulp.src(config.paths.styles.src + '*.scss')
-    .pipe($.cssGlobbing({
-      extensions: ['.scss']
-    }))
+    .pipe($.concat(config.filesDist.css.unminfied))
     .pipe($.sourcemaps.init())
-    .pipe($.sass({
-      includePaths: [
-        config.basePaths.node_modules + 'breakpoint-sass/stylesheets/'
-      ]
-    }).on('error', $.sass.logError))
+    .pipe($.sass(sassOptions).on('error', $.sass.logError))
     .pipe($.autoprefixer({
       browsers: ['last 2 version']
     }))
